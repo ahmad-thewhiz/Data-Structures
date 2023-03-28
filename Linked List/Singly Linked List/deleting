@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct myNode {
+    int data;
+    struct myNode *next;
+} Node;
+
+Node* create_list(Node*);
+void delete(Node*, int);
+void display(Node*);
+
+int main() {
+    Node* head = NULL;
+    head = create_list(head);
+    int index;
+    printf("Enter location of element to be deleted:\n");
+    scanf("%d",&index);
+    delete(head, index);
+    display(head);
+    return 0;
+}
+
+Node* create_list(Node* head) {
+int i,n;
+Node* p;
+printf("Enter number of elements: \n");
+scanf("%d",&n);
+for(i=0;i<n;i++) {
+    if(i==0) {
+        head = (Node*)malloc(sizeof(Node));
+        p=head;
+    }
+    else {
+        p->next=(Node*)malloc(sizeof(Node));
+        p=p->next;
+    }
+    printf("Enter element: \n");
+    scanf("%d",&p->data);
+}
+p->next=NULL;
+return(head);
+}
+
+void delete(Node* head, int index) {
+    Node *prev,*curr=head;
+    int i,x=0;
+
+    if(index<1) //condition to check invalid index
+    printf("Invalid Index");
+
+    else if(index==1) { //if first element, head, has to be deleted
+        prev=head;
+        x=head->data;
+        head=head->next;
+        free(prev);
+        printf("Deleted Element: %d",x);
+    }
+    else { //in all other cases
+        for(i=0;i<index-1;i++) {
+            prev=curr;
+            curr=curr->next;
+        }
+        prev->next=curr->next;
+        x=curr->data;
+        free(curr);
+        printf("Deleted Element: %d\n",x);
+
+    }
+
+}
+
+void display(Node* head) {
+    Node* p;
+    for(p=head;p!=NULL;p=p->next)
+    printf("%d ",p->data);
+}
