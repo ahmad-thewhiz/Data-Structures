@@ -1,4 +1,4 @@
-Problem statement
+/* Problem statement
 
 Write a program to search the element in the circular doubly linked list.
 
@@ -48,7 +48,8 @@ Output 1
 10
 item found at location 1
 
-Code:
+Code:*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
