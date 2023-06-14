@@ -2,14 +2,7 @@
 //Time complexity - 
 //Average - O(n*logn)
 //Worst - O(n^2)
-
-#include<stdio.h>
-
-void swap(int arr[], int i, int j) {
-    int temp = arr[i];// Quick Sort
-// Time complexity -
-// Average - O(n*logn)
-// Worst - O(n^2)
+//https://youtu.be/WprjBK0p6rw
 
 #include<stdio.h>
 
@@ -64,49 +57,5 @@ int main() {
     quick_sort(a, 0, no - 1); // Sort the array using Quick Sort
     printf("\nSorted array: ");
     display(a, no); // Display the sorted array
-    return 0;
-}
-
-    arr[i]=arr[j];
-    arr[j]=temp;
-}
-
-int partition(int arr[], int start, int end) {
-    int pivot = arr[end];
-    int i=start-1;
-    for(int j=start;j<end;j++) {
-        if(arr[j]<pivot) {
-            i++;
-            swap(arr,i,j);
-        }
-    }
-    swap(arr,i+1,end);
-    return (i+1);
-}
-
-void quick_sort(int arr[], int start, int end) {
-    if(start<end) {
-        int part_i=partition(arr,start,end);
-        quick_sort(arr,start,part_i-1);
-        quick_sort(arr, part_i+1, end);
-    }
-}
-
-void display(int arr[], int no) {
-    for(int i=0;i<no;i++)
-        printf("%d ",arr[i]);
-}
-
-int main() {
-    int no;
-    printf("Enter the size of array: ");
-    scanf("%d",&no);
-    int a[no];
-    printf("\nEnter elemetns: ");
-    for(int i=0;i<no;i++)
-        scanf("%d",&a[i]);
-    quick_sort(a,0,no-1);
-    printf("\nSorted array: ");
-    display(a,no);
     return 0;
 }
