@@ -77,7 +77,7 @@ int main()
     printf("Enter Infix Expression: ");
     gets(str);
     char *infix=str;
-    push('#');
+    push(' ');
     char *postfix=convert(infix);
     printf("%s ",postfix);
     return 0;
