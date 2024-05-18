@@ -4,7 +4,7 @@
 // It discovers all vertices at distance k from s before discovering vertices at distance k+1
 
 // space complexity = O(N)
-// time complexity = O(V+E)
+// time complexity = O(2E)
 // runs on all degrees
 
 
