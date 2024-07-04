@@ -6,6 +6,17 @@ typedef struct node {
     struct node *next;
 }node;
 
+// void reverse(node* head, node* curr, node* prev) {
+//     if(curr==NULL) {
+//         head=prev;
+//         return;
+//     }
+
+//     node* forward = curr->next;
+//     reverse(head, forward, curr);
+//     curr->next=prev;
+// }
+
 node* insert_node(node* head, int data) {
     node* newNode = (node*)malloc(sizeof(node));
     newNode->data = data;
