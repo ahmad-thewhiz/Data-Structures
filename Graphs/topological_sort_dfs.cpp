@@ -1,5 +1,19 @@
 // time complexity - O(V+E) [direct graph]
 
+
+// Definition:
+// Topological Sort is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge 
+// u → v, vertex u appears before v in the ordering. 
+
+// It is used in tasks like scheduling and dependency resolution.
+
+// Example:
+// For the graph:
+// 1 → 2 → 3
+// ↓
+// 4
+// Topological Sort: 1, 4, 2, 3 (or other valid orders).
+
 #include <bits/stdc++.h>
 using namespace std;
 
